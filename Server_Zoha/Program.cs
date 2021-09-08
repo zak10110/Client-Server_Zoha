@@ -30,14 +30,20 @@ namespace Server_Zoha
 
                     int bytes = 0;
                     byte[] data = new byte[256];
-
+                    int res = 0;
                     do
                     {
                         bytes = socketClient.Receive(data);
                         stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+                        foreach (var z in stringBuilder.ToString().Split(','))
+                        {
+                            res = res + int.Parse(z);
+
+                        }
                     } while (socketClient.Available > 0);
 
                     Console.WriteLine($"MSG: {stringBuilder.ToString()}");
+                    socketClient.Send(Encoding.Unicode.GetBytes($"{res}"));
 
 
                     socketClient.Shutdown(SocketShutdown.Both);

@@ -1,0 +1,13 @@
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.exe
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.deps.json
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.runtimeconfig.json
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.runtimeconfig.dev.json
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.dll
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.pdb
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.csprojAssemblyReference.cache
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.AssemblyInfo.cs
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.dll
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.pdb
+C:\Users\student\source\repos\zak10110\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.genruntimeconfig.cache

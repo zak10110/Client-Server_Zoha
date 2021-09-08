@@ -30,7 +30,7 @@ namespace Client_Zoha
                 Console.WriteLine(stringBuilder.ToString());
 
 
-                Console.Write("Enter msg for server:");
+                Console.Write("Enter 2 numbers (like this:2,2):");
                 string sms = Console.ReadLine();
                 data = Encoding.Unicode.GetBytes(sms);
 
