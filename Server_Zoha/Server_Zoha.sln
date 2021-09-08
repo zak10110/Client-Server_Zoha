@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server_Zoha", "Server_Zoha.csproj", "{5E06F0BC-3506-409E-B5F7-8BBDFF877A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client_Zoha", "..\Client_Zoha\Client_Zoha.csproj", "{01C84EFE-E117-424D-943B-D64F021B9766}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E06F0BC-3506-409E-B5F7-8BBDFF877A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E06F0BC-3506-409E-B5F7-8BBDFF877A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E06F0BC-3506-409E-B5F7-8BBDFF877A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E06F0BC-3506-409E-B5F7-8BBDFF877A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C84EFE-E117-424D-943B-D64F021B9766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C84EFE-E117-424D-943B-D64F021B9766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C84EFE-E117-424D-943B-D64F021B9766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C84EFE-E117-424D-943B-D64F021B9766}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {459509D9-613F-4F88-9ABD-40C64338F08F}
+	EndGlobalSection
+EndGlobal
