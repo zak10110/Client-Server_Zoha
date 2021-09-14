@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\student\\source\\repos\\zak10110\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj": {}
+    "C:\\Users\\NePC\\Source\\Repos\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj": {}
   },
   "projects": {
-    "C:\\Users\\student\\source\\repos\\zak10110\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj": {
+    "C:\\Users\\NePC\\Source\\Repos\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\student\\source\\repos\\zak10110\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj",
+        "projectUniqueName": "C:\\Users\\NePC\\Source\\Repos\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj",
         "projectName": "Client_Zoha",
-        "projectPath": "C:\\Users\\student\\source\\repos\\zak10110\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj",
-        "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\student\\source\\repos\\zak10110\\Client-Server_Zoha\\Client_Zoha\\obj\\",
+        "projectPath": "C:\\Users\\NePC\\Source\\Repos\\Client-Server_Zoha\\Client_Zoha\\Client_Zoha.csproj",
+        "packagesPath": "C:\\Users\\NePC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NePC\\Source\\Repos\\Client-Server_Zoha\\Client_Zoha\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\NePC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,6 +30,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -52,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
