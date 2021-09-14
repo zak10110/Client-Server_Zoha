@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -8,8 +10,12 @@ namespace Server_Zoha
     class Program
     {
         static int port = 8000;
+        
         static void Main(string[] args)
         {
+            string str = String.Empty;
+            string[] arr = null;
+            Dictionary<string, int> Count_Words = new Dictionary<string, int>();
             IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
@@ -23,37 +29,57 @@ namespace Server_Zoha
                 {
                     Socket socketClient = socket.Accept();
 
-                    socketClient.Send(Encoding.Unicode.GetBytes("Welcome on server!"));
+                   
 
 
                     StringBuilder stringBuilder = new StringBuilder();
 
                     int bytes = 0;
                     byte[] data = new byte[256];
-                    int res = 0;
+                  
+                    
                     do
                     {
                         bytes = socketClient.Receive(data);
                         stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                        foreach (var z in stringBuilder.ToString().Split(','))
+                     
+
+                    
+                    } while (socketClient.Available > 0) ;
+                    arr = stringBuilder.ToString().Split(' ');
+
+                    foreach (var z in arr)
+                    {
+                        if (Count_Words.ContainsKey(z) == false)
                         {
-                            res = res + int.Parse(z);
+                            Count_Words.Add(z, 1);
+                        }
+                        else
+                        {
+                            Count_Words[z]++;
 
                         }
-                    } while (socketClient.Available > 0);
+                    }
 
-                    Console.WriteLine($"MSG: {stringBuilder.ToString()}");
-                    socketClient.Send(Encoding.Unicode.GetBytes($"{res}"));
+                    
 
+                       
+                    
 
-                    socketClient.Shutdown(SocketShutdown.Both);
-                    socketClient.Close();
+                    for (int i=0;i<Count_Words.Count;i++)
+                    {
+                        str += Count_Words.ElementAt(i).Key + " " + Count_Words.ElementAt(i).Value+"\n";
+                    }
+
+                    data = Encoding.Unicode.GetBytes(str);
+                    socketClient.Send(data);
+                
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-        }
+}
     }
 }

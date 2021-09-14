@@ -22,6 +22,17 @@ namespace Client_Zoha
                 byte[] data = new byte[256];
                 StringBuilder stringBuilder = new StringBuilder();
 
+               
+
+
+                Console.Write("Enter Text(string):");
+                string sms = Console.ReadLine();
+                data = Encoding.Unicode.GetBytes(sms);
+
+                socket.Send(data);
+
+                Console.WriteLine($"Sms \"{sms}\" send to SERVER [{ipAddr}]!");
+
                 do
                 {
                     bytes = socket.Receive(data);
@@ -30,19 +41,13 @@ namespace Client_Zoha
                 Console.WriteLine(stringBuilder.ToString());
 
 
-                Console.Write("Enter 2 numbers (like this:2,2):");
-                string sms = Console.ReadLine();
-                data = Encoding.Unicode.GetBytes(sms);
 
-                socket.Send(data);
-
-                Console.WriteLine($"Sms \"{sms}\" send to SERVER [{ipAddr}]!");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
