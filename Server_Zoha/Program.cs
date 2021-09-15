@@ -11,14 +11,19 @@ namespace Server_Zoha
     class Program
     {
         static int port = 8000;
-        
+        static int bytes = 0;
+       
+        static Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        static string str = String.Empty;
+        static string[] arr = null;
+        static Dictionary<string, int> Count_Words = new Dictionary<string, int>();
+        static Socket socketClient;
+
         static void Main(string[] args)
         {
-            string str = String.Empty;
-            string[] arr = null;
-            Dictionary<string, int> Count_Words = new Dictionary<string, int>();
+            
             IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            
 
             Console.WriteLine("Start server...");
             try
@@ -28,24 +33,25 @@ namespace Server_Zoha
 
                 while (true)
                 {
-                    Socket socketClient = socket.Accept();
+
+                    byte[] data = new byte[256];
+                    StringBuilder stringBuilder = new StringBuilder();
+                    socketClient = socket.Accept();
 
                    
-
-
-                    StringBuilder stringBuilder = new StringBuilder();
-
-                    int bytes = 0;
-                    byte[] data = new byte[256];
-                  
                     
+                    
+                    string path = GetFileName(socketClient);
+
+                    data = new byte[int.Parse(GetFileSize(socketClient))];
                     do
                     {
                         bytes = socketClient.Receive(data);
                         stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                    } while (socketClient.Available > 0) ;
+                    } while (socketClient.Available > 0);
 
-                    File.WriteAllBytes($"{DateTime.Now.ToString().Replace(' ', '_').Replace('.', '_').Replace(':', '_')}.txt", data);
+                    File.WriteAllBytes(path, data);
+
                     arr = stringBuilder.ToString().Split('.');
 
                     foreach (var z in arr)
@@ -61,25 +67,73 @@ namespace Server_Zoha
                         }
                     }
 
-                    
 
-                       
-                    
 
-                    for (int i=0;i<Count_Words.Count;i++)
+
+
+
+                    for (int i = 0; i < Count_Words.Count; i++)
                     {
-                        str += Count_Words.ElementAt(i).Key + " " + Count_Words.ElementAt(i).Value+"\n";
+                        str += Count_Words.ElementAt(i).Key + " " + Count_Words.ElementAt(i).Value + "\n";
                     }
 
                     data = Encoding.Unicode.GetBytes(str);
                     socketClient.Send(data);
-                
+
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-}
+        }
+        static string GetFileName(Socket clientSoc)
+        {
+
+            StringBuilder stringBuilder = new StringBuilder();
+            byte[] data = new byte[256];
+          
+            do
+            {
+                bytes = clientSoc.Receive(data);
+                stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+            } while (socketClient.Available > 0);
+
+            return stringBuilder.ToString();
+        }
+
+
+        static string GetFileSize(Socket clientSoc)
+        {
+
+            StringBuilder stringBuilder = new StringBuilder();
+            byte[] data = new byte[256];
+
+            do
+            {
+                bytes = clientSoc.Receive(data);
+                stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+            } while (socketClient.Available > 0);
+
+            return stringBuilder.ToString();
+        }
+
+
+        static string GetFile(Socket clientSoc,int size)
+        {
+
+            StringBuilder stringBuilder = new StringBuilder();
+            byte[] data = new byte[size];
+
+            do
+            {
+                bytes = clientSoc.Receive(data);
+                stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+            } while (socketClient.Available > 0);
+
+            return stringBuilder.ToString();
+        }
     }
+
+
 }

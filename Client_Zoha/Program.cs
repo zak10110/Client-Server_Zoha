@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -20,7 +21,9 @@ namespace Client_Zoha
                 socket.Connect(iPEndPoint);
 
                 int bytes = 0;
-                byte[] data = new byte[256];
+                string size = string.Empty;
+                string size_path = string.Empty;
+                byte[] data = new byte[250];
                 StringBuilder stringBuilder = new StringBuilder();
 
                
@@ -28,9 +31,13 @@ namespace Client_Zoha
 
                 Console.Write("Enter Path:");
                 string sms = Console.ReadLine();
-                data = File.ReadAllBytes(sms);
-                
-                socket.Send(data);
+                size_path= sms.Count().ToString();
+                socket.Send(Encoding.Unicode.GetBytes(size_path));
+                socket.Send(Encoding.Unicode.GetBytes(sms));
+                size = File.ReadAllBytes(sms).Count().ToString();
+                socket.Send(Encoding.Unicode.GetBytes(size));
+                socket.Send(File.ReadAllBytes(sms));
+
 
                 Console.WriteLine($"Sms \"{sms}\" send to SERVER [{ipAddr}]!");
 
