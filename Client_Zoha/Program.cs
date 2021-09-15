@@ -31,8 +31,6 @@ namespace Client_Zoha
 
                 Console.Write("Enter Path:");
                 string sms = Console.ReadLine();
-                size_path= sms.Count().ToString();
-                socket.Send(Encoding.Unicode.GetBytes(size_path));
                 socket.Send(Encoding.Unicode.GetBytes(sms));
                 size = File.ReadAllBytes(sms).Count().ToString();
                 socket.Send(Encoding.Unicode.GetBytes(size));

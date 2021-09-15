@@ -119,20 +119,7 @@ namespace Server_Zoha
         }
 
 
-        static string GetFile(Socket clientSoc,int size)
-        {
-
-            StringBuilder stringBuilder = new StringBuilder();
-            byte[] data = new byte[size];
-
-            do
-            {
-                bytes = clientSoc.Receive(data);
-                stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-            } while (socketClient.Available > 0);
-
-            return stringBuilder.ToString();
-        }
+        
     }
 
 
