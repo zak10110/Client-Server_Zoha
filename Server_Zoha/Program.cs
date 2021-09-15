@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -42,11 +43,10 @@ namespace Server_Zoha
                     {
                         bytes = socketClient.Receive(data);
                         stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                     
-
-                    
                     } while (socketClient.Available > 0) ;
-                    arr = stringBuilder.ToString().Split(' ');
+
+                    File.WriteAllBytes($"{DateTime.Now.ToString().Replace(' ', '_').Replace('.', '_').Replace(':', '_')}.txt", data);
+                    arr = stringBuilder.ToString().Split('.');
 
                     foreach (var z in arr)
                     {

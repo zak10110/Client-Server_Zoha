@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -25,10 +26,10 @@ namespace Client_Zoha
                
 
 
-                Console.Write("Enter Text(string):");
+                Console.Write("Enter Path:");
                 string sms = Console.ReadLine();
-                data = Encoding.Unicode.GetBytes(sms);
-
+                data = File.ReadAllBytes(sms);
+                
                 socket.Send(data);
 
                 Console.WriteLine($"Sms \"{sms}\" send to SERVER [{ipAddr}]!");
