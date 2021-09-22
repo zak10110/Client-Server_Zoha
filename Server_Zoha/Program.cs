@@ -38,11 +38,7 @@ namespace Server_Zoha
                     StringBuilder stringBuilder = new StringBuilder();
                     socketClient = socket.Accept();
 
-                   
-                    
-                    
                     string path = GetFileName(socketClient);
-
                     data = new byte[int.Parse(GetFileSize(socketClient))];
                     do
                     {
@@ -50,35 +46,14 @@ namespace Server_Zoha
                         stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
                     } while (socketClient.Available > 0);
 
-                    File.WriteAllBytes(path, data);
+                    File.WriteAllBytes(Path.GetFileName(path), data);
 
-                    arr = stringBuilder.ToString().Split('.');
 
-                    foreach (var z in arr)
-                    {
-                        if (Count_Words.ContainsKey(z) == false)
-                        {
-                            Count_Words.Add(z, 1);
-                        }
-                        else
-                        {
-                            Count_Words[z]++;
-
-                        }
-                    }
+                   
 
 
 
 
-
-
-                    for (int i = 0; i < Count_Words.Count; i++)
-                    {
-                        str += Count_Words.ElementAt(i).Key + " " + Count_Words.ElementAt(i).Value + "\n";
-                    }
-
-                    data = Encoding.Unicode.GetBytes(str);
-                    socketClient.Send(data);
 
                 }
             }
