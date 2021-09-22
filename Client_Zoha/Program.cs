@@ -9,41 +9,43 @@ namespace Client_Zoha
 {
     class Program
     {
-        static string ipAddr = "127.0.0.1";
-        static int port = 8000;
+ 
         static void Main(string[] args)
         {
             try
             {
-                IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse(ipAddr), port);
-                Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                
+                Console.Write("Enter Path:");
+                string path = Console.ReadLine();
+                Client client = new Client("127.0.0.1", 8000, path);
+                client.CreateSocet();
+                client.CreateIPEndPoint();
 
-                socket.Connect(iPEndPoint);
+
+
+                client.socket.Connect(client.iPEndPoint);
 
                 int bytes = 0;
-                string size = string.Empty;
-                string size_path = string.Empty;
+                
                 byte[] data = new byte[250];
+               
                 StringBuilder stringBuilder = new StringBuilder();
 
-               
 
 
-                Console.Write("Enter Path:");
-                string sms = Console.ReadLine();
-                socket.Send(Encoding.Unicode.GetBytes(sms));
-                size = File.ReadAllBytes(sms).Count().ToString();
-                socket.Send(Encoding.Unicode.GetBytes(size));
-                socket.Send(File.ReadAllBytes(sms));
+
+                client.SendPathToServ();
+                client.GetAndSendSizeToServ();
+                client.SendFileToServ();
 
 
-                Console.WriteLine($"Sms \"{sms}\" send to SERVER [{ipAddr}]!");
+                Console.WriteLine($"Sms \"{path}\" send to SERVER [{client.ipAddr}]!");
 
                 do
                 {
-                    bytes = socket.Receive(data);
+                    bytes = client.socket.Receive(data);
                     stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                } while (socket.Available > 0);
+                } while (client.socket.Available > 0);
                 Console.WriteLine(stringBuilder.ToString());
 
 
