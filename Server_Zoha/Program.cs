@@ -12,7 +12,7 @@ namespace Server_Zoha
     {
         static int port = 8000;
         static int bytes = 0;
-       
+
         static Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         static string str = String.Empty;
         static string[] arr = null;
@@ -21,9 +21,9 @@ namespace Server_Zoha
 
         static void Main(string[] args)
         {
-            
+
             IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), port);
-            
+
 
             Console.WriteLine("Start server...");
             try
@@ -35,21 +35,11 @@ namespace Server_Zoha
                 {
 
                     byte[] data = new byte[256];
-                    StringBuilder stringBuilder = new StringBuilder();
+
                     socketClient = socket.Accept();
-
                     string path = GetFileName(socketClient);
-                    data = new byte[int.Parse(GetFileSize(socketClient))];
-                    do
-                    {
-                        bytes = socketClient.Receive(data);
-                        stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                    } while (socketClient.Available > 0);
+                    WriteFile(path);
 
-                    File.WriteAllBytes(Path.GetFileName(path), data);
-
-
-                   
 
 
 
@@ -62,12 +52,35 @@ namespace Server_Zoha
                 Console.WriteLine(ex.Message);
             }
         }
+
+        static bool WriteFile(string path)
+        {
+            try
+            {
+                byte[] data = new byte[int.Parse(GetFileSize(socketClient))];
+                StringBuilder stringBuilder = new StringBuilder();
+                do
+                {
+                    bytes = socketClient.Receive(data);
+                    stringBuilder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+                } while (socketClient.Available > 0);
+
+                File.WriteAllBytes(Path.GetFileName(path), data);
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            return true;
+        }
+
         static string GetFileName(Socket clientSoc)
         {
 
             StringBuilder stringBuilder = new StringBuilder();
             byte[] data = new byte[256];
-          
+
             do
             {
                 bytes = clientSoc.Receive(data);
@@ -94,7 +107,7 @@ namespace Server_Zoha
         }
 
 
-        
+
     }
 
 
