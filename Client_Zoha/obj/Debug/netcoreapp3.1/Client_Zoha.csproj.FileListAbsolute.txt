@@ -37,3 +37,16 @@ C:\Users\student\Source\Repos\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreap
 C:\Users\student\Source\Repos\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.dll
 C:\Users\student\Source\Repos\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.pdb
 C:\Users\student\Source\Repos\Client-Server_Zoha\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.genruntimeconfig.cache
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.exe
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.deps.json
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.runtimeconfig.json
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.runtimeconfig.dev.json
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.dll
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\bin\Debug\netcoreapp3.1\Client_Zoha.pdb
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.csprojAssemblyReference.cache
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.AssemblyInfoInputs.cache
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.AssemblyInfo.cs
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.csproj.CoreCompileInputs.cache
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.dll
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.pdb
+C:\Users\NePC\Source\Repos\Client-Server_Tic_Tac_Toe\Client_Zoha\obj\Debug\netcoreapp3.1\Client_Zoha.genruntimeconfig.cache
