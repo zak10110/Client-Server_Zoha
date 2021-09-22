@@ -18,8 +18,8 @@ namespace Client_Zoha
                 Console.Write("Enter Path:");
                 string path = Console.ReadLine();
                 Client client = new Client("127.0.0.1", 8000, path);
-                client.CreateSocet();
-                client.CreateIPEndPoint();
+                client.Conect();
+                
 
 
 

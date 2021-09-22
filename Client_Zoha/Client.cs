@@ -57,5 +57,13 @@ namespace Client_Zoha
 
         }
 
+        public void Conect()
+        {
+
+            this.CreateIPEndPoint();
+            this.CreateSocet();
+        
+        }
+
     }
 }
